@@ -1,0 +1,192 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+}
+nav{
+    background-color: hsl(0, 0%, 100%);
+    padding: 1.5em 0em;
+    border-bottom: 1px solid #dcdde1;
+}
+
+.logo-menu{
+    cursor: pointer;
+}
+
+.menu-nav .nav-link{
+    color: #2d3436 !important;
+    font-weight: 500 !important;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all ease .3s;
+}
+
+.menu-nav .nav-link:hover{
+    color: #f6b93b !important;
+}
+
+.card-relative{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #2d3436;
+    transition: all ease .3s;
+}
+
+.card-relative:hover .card-text{
+    top: 0;
+    transition: all ease .3s;
+}
+
+.card-agotado{
+    pointer-events: none;
+}
+
+.card-agotado img{
+    filter: grayscale(1);
+}
+
+.card-agotado::before{
+    content: "Agotado";
+    position: absolute;
+    width: 100%;
+    background-color: #f6b93b;
+    left: 30px;
+    top: 20px;
+    text-align: center;
+    padding: 0.7em;
+    color: #fff;
+    font-weight: 600;
+    transform: rotate(30deg);
+    z-index: 1;
+}
+
+.text-desp{
+    font-size: 0.8em;
+}
+
+.glide__arrows{
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.glide__arrow{
+    border: 0;
+    background: 0;
+    padding: 0;margin: 4px;
+    font-size: 20px;
+    color: #dcdde1;
+}
+
+.glide__arrow:hover{
+    color: #f6b93b;
+}
+
+.glide__slide{
+    height: auto;
+}
+
+.form-contacto{
+    max-width: 550px;
+    margin-bottom: 2em;
+}
+
+.form-contacto textarea{
+    min-height: 150px;
+}
+
+.bg-footer{
+    background-color: #ecf0f1;
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#696969 ;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 111111;
+}
+
+.social_red{
+    position: fixed;
+    top: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%);
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    contain: content;
+    z-index: 2;
+}
+
+.social_red .icon-social{
+    width: 40px;
+    height: 40px;
+}
+
+.social_red .icon-social a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.social_red .icon-social.facebook_social{
+    background-color: #3b5998;
+}
+.social_red .icon-social.twitter_social{
+    background-color: #00acee ;
+}
+.social_red .icon-social.whatsapp_social{
+    background-color: #00bb2d ;
+}
+.social_red .icon-social.youtube_social{
+    background-color: #c4302b  ;
+}
+
+#productos .icon-wsp-pro{
+    display: none;
+}
+
+@media (max-width: 575.98px) { 
+    #productos h6{
+        font-size: 0.6em;
+    }
+
+    #productos .precio_producto{
+        font-size: 0.6em;
+    }
+
+    .card-agotado::before{
+        left: 15px;
+        top: 10px;
+        font-size: 12px;
+        padding: 0.5em;
+        color: #fff;
+    }
+}
