@@ -1,7 +1,6 @@
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.18
+        <b>2005-2022</b>
     </div>
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2022 <a href="https://www.krbsistemas.com/">KRBSistemas</a>.</strong> Todos los Derechos Reservados
 </footer>

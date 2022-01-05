@@ -4,7 +4,6 @@
     }
     $admin = new UsuarioController();
     $valor = $admin->obtenerAdministrador();
-    print_r($valor);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +30,11 @@
     <link rel="stylesheet" href="<?php echo URLAD; ?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<?php echo URLAD; ?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?php echo URLAD; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<?php echo URLAD; ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="<?php echo URLAD; ?>dist/css/estilosKRB.css">
     <title>KrbAdmin</title>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -50,9 +51,9 @@
             echo "<script>window.location.href = '".URL."admin/dashboard'</script>";
         }
 
-        if ($ruta[1] == "dashboard" || $ruta[1] == "usuarios" || $ruta[1] == "productos" || $ruta[1] == "sistema" || $ruta[1] == "config") {
+        if ($ruta[1] == "dashboard" || $ruta[1] == "usuarios" || $ruta[1] == "productos" || $ruta[1] == "sistema" || $ruta[1] == "configuracion" || $ruta[1] == "ventas") {
             
-            include_once "admin/view/template/include/dashboard.view.php";
+            include_once "admin/view/template/include/".$ruta[1].".view.php";
 
         }else{
             echo "<script>window.location.href = '".URL."admin/dashboard'</script>";
@@ -75,6 +76,8 @@
     <script src="<?php echo URLAD; ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- FastClick -->
     <script src="<?php echo URLAD; ?>bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="<?php echo URLAD; ?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo URLAD; ?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo URLAD; ?>dist/js/adminlte.min.js"></script>
     <!-- Sparkline -->
@@ -88,7 +91,20 @@
     <script src="<?php echo URLAD; ?>bower_components/chart.js/Chart.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?php echo URLAD; ?>dist/js/pages/dashboard2.js"></script>
+    <!-- DataTables -->
+
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo URLAD; ?>dist/js/demo.js"></script>
+    <?php
+
+    if ($ruta[1] == "dashboard" || $ruta[1] == "usuarios" || $ruta[1] == "productos" || $ruta[1] == "sistema" || $ruta[1] == "configuracion" || $ruta[1] == "ventas") {
+        
+        echo '<script src="'.URLAD.'js/'.$ruta[1].'.js"></script>';
+
+    }
+
+    ?>
+    
+   
 </body>
 </html>

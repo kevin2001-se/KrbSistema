@@ -1,0 +1,10 @@
+.contenedor_imagen_producto{
+    border: 1px solid;
+    border-color: #d2d6de;
+    
+}
+
+.img-fluid{
+    width: 100%;
+    max-width: 100%;
+}
