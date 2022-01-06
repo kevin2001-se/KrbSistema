@@ -1,5 +1,7 @@
 $(document).ready(function () {
-    
+
+  const url = document.querySelector("#url").value;
+  
     function tablaProducto() { 
         $('#productosTB').DataTable({
             paging: true,
@@ -15,14 +17,16 @@ $(document).ready(function () {
             "columns":[
                 {render: function(data, type,row){
   
-                  return row[1]+'<input type="hidden" class="codigoP" name="codigoP" value="'+ row[0] +'">'
+                  return  row[0] +'<input type="hidden" class="codigoP" name="codigoP" value="'+ row[0] +'">'
   
+                }},//"data" : "foto_producto"
+                {"data" : "foto_producto",render: function(data, type, row){
+                  return `<img class="img-fluid" src="${url}${data}" style="width:150px"/>`;
                 }},
-                {"data" : "foto_producto"},
                 {"data" : "nombre_producto"},
                 {"data" : "stock"},
                 {"data" : "precio_producto"},
-                {"data" : "id_usuario"},
+                {"data" : "nombre"},
                 {render: function(data, type, row){
     
                     return '<button type="button" class="btn btn-primary editarPro mr-1">Editar</button><button type="button" class="btn btn-danger text-light eliminarPro">Eliminar</button>'
@@ -61,5 +65,31 @@ $(document).ready(function () {
 
     tablaProducto();
     var table = $("#productosTB").DataTable();
+
+
+    $("#form-producto").submit(function (e) { 
+      e.preventDefault();
+      
+      const nombre = $("#nombre").val();
+      const stock = $("#stock").val();
+      const precio = $("#precio").val();
+      
+      producto = new FormData();
+      producto.append("nombre", nombre);
+      producto.append("stock", stock);
+      producto.append("precio", precio);
+
+      $.ajax({
+        type: "POST",
+        url: "api/producto.ajax.php",
+        data: producto,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+          console.log(response);
+        }
+      });
+
+    });
 
 });

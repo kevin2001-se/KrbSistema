@@ -21,7 +21,7 @@ class Conexion {
             
             $con = new PDO("mysql:host=".$this->servidor.";dbname=".$this->db , $this->user, $this->pass);
 
-            $con->exec("set name utf8");
+            $con->exec("set names utf8");
 
             return $con;
 

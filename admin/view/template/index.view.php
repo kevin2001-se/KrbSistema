@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="<?php echo URLAD; ?>dist/css/estilosKRB.css">
     <title>KrbAdmin</title>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper">
     <?php
         include_once "admin/view/template/shared/menu.shared.php";
@@ -105,6 +105,6 @@
 
     ?>
     
-   
+   <input type="hidden" value="<?php echo URL;?>view/src/img/Products/" id="url">
 </body>
 </html>

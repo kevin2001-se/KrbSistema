@@ -1,6 +1,6 @@
 <?php
 
-class ProductoController {
+class ProductosController {
 
     public function ListarProductos()
     {

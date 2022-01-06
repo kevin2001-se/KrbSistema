@@ -53,28 +53,28 @@
 
 <div class="modal fade" id="modal-agregar">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <form class="modal-content" method="POST" id="form-producto">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Agregar Producto</h4>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" class="row" id="form-producto">
+                <div class="row">
 
                     <div class="form-group col-xs-12">
                         <label>Nombre del Producto</label>
-                        <input type="text" class="form-control" placeholder="Ingresa Nombre del Producto">
+                        <input type="text" class="form-control" placeholder="Ingresa Nombre del Producto" name="nombre" id="nombre">
                     </div>
 
                     <div class="form-group col-xs-12 col-md-6">
                         <label>Stock del Producto</label>
-                        <input type="number" class="form-control" placeholder="Ingresa Stock del Producto">
+                        <input type="number" class="form-control" placeholder="Ingresa Stock del Producto" id="stock">
                     </div>
 
                     <div class="form-group col-xs-12 col-md-6">
                         <label>Precio del Producto</label>
-                        <input type="number" step="any" class="form-control" placeholder="Ingresa Precio del Producto">
+                        <input type="number" step="any" class="form-control" placeholder="Ingresa Precio del Producto" id="precio">
                     </div>
 
                     <div class="col-xs-12">
@@ -96,13 +96,13 @@
 
                     </div>
 
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-                <button type="button" class="btn btn-primary">Guardar Producto</button>
+                <button type="submit" class="btn btn-primary">Guardar Producto</button>
             </div>
-        </div>
+        </form>
             <!-- /.modal-content -->
     </div>
           <!-- /.modal-dialog -->

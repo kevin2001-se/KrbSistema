@@ -1,6 +1,6 @@
 <?php
 
-define("URL","http://localhost/KRBSistemas/web/project/");
+define("URL","https://localhost/KrbSistema/");
 define("URLAD",URL."admin/view/src/");
 define("server", "localhost");
 define("DB", "db_krb");
