@@ -12,7 +12,7 @@
             <div class="col-6 col-md-4 col-lg-3 text-center">
                 <div class="card mb-3">
                     <div class="card-body card-relative card-agotado">
-                        <img src="<?php echo URL ?>view/src/img/Products/<?php echo $value["foto_producto"] ?>" alt="<?php echo $value["nombre_producto"] ?>" class="img-fluid">
+                        <img src="<?php echo URLAD ?>img/Products/<?php echo $value["foto_producto"] ?>" alt="<?php echo $value["nombre_producto"] ?>" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card mb-2">
                     <div class="card-body card-relative text-center">
-                        <img src="<?php echo URL ?>view/src/img/Products/<?php echo $value["foto_producto"] ?>" alt="<?php echo $value["nombre_producto"] ?>" class="img-fluid">
+                        <img src="<?php echo URLAD ?>img/Products/<?php echo $value["foto_producto"] ?>" alt="<?php echo $value["nombre_producto"] ?>" class="img-fluid">
 
                         <div class="card-text">
                             <h6 class="text-center"><?php echo $value["nombre_producto"] ?></h6>

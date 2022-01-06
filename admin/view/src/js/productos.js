@@ -73,11 +73,13 @@ $(document).ready(function () {
       const nombre = $("#nombre").val();
       const stock = $("#stock").val();
       const precio = $("#precio").val();
+      const file = $("#fileProducto")[0].files[0]
       
       producto = new FormData();
       producto.append("nombre", nombre);
       producto.append("stock", stock);
       producto.append("precio", precio);
+      producto.append("file", file);
 
       $.ajax({
         type: "POST",

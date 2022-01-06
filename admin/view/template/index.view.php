@@ -105,6 +105,6 @@
 
     ?>
     
-   <input type="hidden" value="<?php echo URL;?>view/src/img/Products/" id="url">
+   <input type="hidden" value="<?php echo URLAD;?>img/Products/" id="url">
 </body>
 </html>
