@@ -28,6 +28,15 @@ class AjaxProductos {
         echo $response;
     }
 
+    public function ajaxEliminarProducto()
+    {
+        $producto = new ProductosController();
+
+        $response = $producto->EliminarProducto($this->datos);
+
+        echo $response;
+    }
+
 }
 
 if (isset($_POST["nombre"])) {
@@ -44,8 +53,15 @@ if (isset($_POST["nombre"])) {
 
     $crear->ajaxRegistrarProductos();
 
-    echo print_r($crear->datos);
-}else{
+}else if(isset($_POST["idProducto"])) {
+
+    $eliminar = new AjaxProductos();
+
+    $eliminar->datos = $_POST["idProducto"];
+
+    $eliminar->ajaxEliminarProducto();
+}
+else{
 
     $lista = new AjaxProductos();
 

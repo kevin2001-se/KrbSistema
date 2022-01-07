@@ -78,6 +78,44 @@ class ProductosController {
 
             return $response;
 
+        }else {
+            return "campo-vacio";
+        }
+    }
+
+    public function EliminarProducto($data)
+    {
+        if (!empty($data)) {
+            
+            $producto = new Productos();
+
+            $producto -> codigo = $data;
+
+            $obtener = $producto->ObtenerProducto();
+
+            if (isset($obtener["id_producto"])) {
+            
+                $ruta = "../view/src/img/Products/".$obtener["foto_producto"];
+
+                $respuesta = $producto->EliminarProducto();
+
+                if ($respuesta == "success") {
+                    unlink($ruta);
+                    return "success";
+                }else{
+                    return "error";
+                }
+
+            }else{
+
+                return "error";
+
+            }
+
+        }else{
+
+            return "error";
+
         }
     }
 

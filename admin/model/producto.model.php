@@ -47,4 +47,38 @@ class Productos {
         $pdo = null;
     }
 
+    public function ObtenerProducto()
+    {
+        $query = "SELECT * FROM producto WHERE id_producto = :id LIMIT 1";
+
+        $pdo = $this->con->prepare($query);
+
+        $pdo->bindParam(":id", $this->codigo, PDO::PARAM_INT);
+
+        if ($pdo->execute()) {
+            return $pdo->fetch();
+        }else{
+            return $pdo->errorInfo();
+        }
+
+        $pdo = null;
+    }
+
+    public function EliminarProducto()
+    {
+        $query = "DELETE FROM producto WHERE id_producto = :id";
+
+        $pdo = $this->con->prepare($query);
+
+        $pdo->bindParam(":id", $this->codigo, PDO::PARAM_INT);
+
+        if ($pdo->execute()) {
+            return "success";
+        }else{
+            return $pdo->errorInfo();
+        }
+
+        $pdo = null;
+    }
+
 }

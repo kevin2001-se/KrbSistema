@@ -82,7 +82,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="contenedor_imagen_producto">
-                                    <img src="<?php echo URLAD; ?>img/ilustracion-no.jpg" alt="foto de producto" class="img-fluid">
+                                    <img src="<?php echo URLAD; ?>img/ilustracion-no.jpg" alt="foto de producto" class="img-fluid previsualizarPortada">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -95,12 +95,14 @@
                         </div>
 
                     </div>
-
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
                 <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            </div>
+            <div class="loaders">
+                
             </div>
         </form>
             <!-- /.modal-content -->
