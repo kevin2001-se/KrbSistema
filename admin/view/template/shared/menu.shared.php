@@ -91,7 +91,7 @@
                 $active2 = ($ruta[1] == "productos" && $ruta[0] == "admin") ? "active" : "" ;
                 $active3 = ($ruta[1] == "sistema" && $ruta[0] == "admin") ? "active" : "" ;
                 $active4 = ($ruta[1] == "configuracion" && $ruta[0] == "admin") ? "active" : "" ;
-                $active4 = ($ruta[1] == "ventas" && $ruta[0] == "admin") ? "active" : "" ;
+                $active5 = ($ruta[1] == "ventas" && $ruta[0] == "admin") ? "active" : "" ;
             ?>
 
             <li class="<?php echo $active ?>">
@@ -109,7 +109,7 @@
                     <i class="fa fa-archive"></i> <span>Productos</span>
                 </a>
             </li>
-            <li class="<?php echo $active3 ?>">
+            <li class="<?php echo $active5 ?>">
                 <a href="<?php echo URL ?>admin/ventas">
                     <i class="fa fa-calculator"></i> <span>Ventas</span>
                 </a>

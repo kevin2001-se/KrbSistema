@@ -81,4 +81,25 @@ class Productos {
         $pdo = null;
     }
 
+    public function editarProductos()
+    {
+        $query = "UPDATE producto SET nombre_producto = :nombre, stock = :stock,precio_producto = :precio,foto_producto = :foto WHERE id_producto = :id";
+
+        $pdo = $this->con->prepare($query);
+
+        $pdo->bindParam(":nombre", $this->nombre, PDO::PARAM_STR);
+        $pdo->bindParam(":stock", $this->stock, PDO::PARAM_INT);
+        $pdo->bindParam(":precio", $this->precio, PDO::PARAM_STR);
+        $pdo->bindParam(":foto", $this->foto, PDO::PARAM_STR);
+        $pdo->bindParam(":id", $this->codigo, PDO::PARAM_INT);
+
+        if ($pdo->execute()) {
+            return "success";
+        }else{
+            return $pdo->errorInfo();
+        }
+
+        $pdo = null;
+    }
+
 }
