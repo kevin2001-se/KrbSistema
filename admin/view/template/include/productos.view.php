@@ -51,6 +51,8 @@
 
 </section>
 
+<!-- MODAL REGISTRAR PRODUCTO -->
+
 <div class="modal fade" id="modal-agregar">
     <div class="modal-dialog">
         <form class="modal-content" method="POST" id="form-producto">
@@ -88,7 +90,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="fileProducto">Foto Producto</label>
-                                    <input type="file" id="fileProducto">
+                                    <input type="file" id="fileProducto" class="changeimg">
                                     <p class="help-block">La Foto de producto no debe pesar mas de 2MB</p>
                                 </div>
                             </div>
@@ -110,3 +112,66 @@
           <!-- /.modal-dialog -->
 </div>
 
+<!-- MODAL EDITAR PRODUCTO -->
+
+<div class="modal fade" id="modal-editar">
+    <div class="modal-dialog">
+        <form class="modal-content" method="POST" id="form-producto-edit">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Editar Producto</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <input type="hidden" id="id_producto">
+
+                    <div class="form-group col-xs-12">
+                        <label>Nombre del Producto</label>
+                        <input type="text" class="form-control" placeholder="Ingresa Nombre del Producto" name="nombre" id="nombreEdit">
+                    </div>
+
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label>Stock del Producto</label>
+                        <input type="number" class="form-control" placeholder="Ingresa Stock del Producto" id="stockEdit" name="stock">
+                    </div>
+
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label>Precio del Producto</label>
+                        <input type="number" step="any" class="form-control" placeholder="Ingresa Precio del Producto" id="precioEdit" name="precio">
+                    </div>
+
+                    <div class="col-xs-12">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contenedor_imagen_producto">
+                                    <img src="<?php echo URLAD; ?>img/ilustracion-no.jpg" alt="foto de producto" class="img-fluid previsualizarPortada obtenerImg">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fileProducto">Foto Producto</label>
+                                    <input type="file" id="fileProductoEdit" class="changeimg">
+                                    <p class="help-block">La Foto de producto no debe pesar mas de 2MB</p>
+                                    <input type="hidden" id="fotoAntigua">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                <button type="submit" class="btn btn-primary">Guardar Producto</button>
+            </div>
+            <div class="loaders">
+                
+            </div>
+        </form>
+            <!-- /.modal-content -->
+    </div>
+          <!-- /.modal-dialog -->
+</div>
