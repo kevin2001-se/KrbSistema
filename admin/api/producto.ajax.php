@@ -37,6 +37,29 @@ class AjaxProductos {
         echo $response;
     }
 
+    public function ajaxObtenerProducto()
+    {
+        $producto = new ProductosController();
+
+        $response = $producto->ObtenerProducto($this->datos);
+
+        if ($response == "error") {
+            echo $response;
+        }else{
+            echo json_encode($response, JSON_UNESCAPED_UNICODE);
+        }
+
+    }
+
+    public function ajaxActualizarProducto()
+    {
+        $producto = new ProductosController();
+
+        $response = $producto->EditarProducto($this->datos);
+
+        echo $response;
+    }
+
 }
 
 if (isset($_POST["nombre"])) {
@@ -60,6 +83,33 @@ if (isset($_POST["nombre"])) {
     $eliminar->datos = $_POST["idProducto"];
 
     $eliminar->ajaxEliminarProducto();
+
+}else if (isset($_POST["obtener"])) {
+    
+    $obtener = new AjaxProductos();
+
+    $obtener->datos = $_POST["obtener"];
+
+    $obtener->ajaxObtenerProducto();
+
+}elseif (isset($_POST["id"]) && isset($_POST["nombreE"])) {
+    
+    $editar = new AjaxProductos();
+    
+    $fotoActual = (!empty($_FILES["fotoActual"])) ? $_FILES["fotoActual"] : "" ;
+    
+    $editar->datos = array(
+        "id" => $_POST["id"],
+        "nombre" => $_POST["nombreE"],
+        "stock" => $_POST["stock"],
+        "precio" => $_POST["precio"],
+        "file" => $fotoActual,
+        "foto_antigua" => $_POST["fotoAntigua"],
+        "user" => $_SESSION["admin"],
+    );
+
+    $editar->ajaxActualizarProducto();
+
 }
 else{
 
