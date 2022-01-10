@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="<?php echo URL ?>view/src/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="shortcut icon" href="<?php echo URL ?>view/src/img/<?php echo $row["logo_pestana"] ?>"> 
+
+    <link rel="shortcut icon" href="<?php echo URLAD ?>img/Logotipo/<?php echo $row["logo_pestana"] ?>"> 
 
     <title><?php echo $row["titulo"] ?></title>
 </head>
